@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/harnesscheck"><img src="https://img.shields.io/npm/v/harnesscheck?logo=npm&logoColor=white&color=CB3837" alt="npm package version" /></a>
+  <a href="https://github.com/SiluPanda/harnesscheck/releases/latest"><img src="https://img.shields.io/github/v/release/SiluPanda/harnesscheck?display_name=tag&sort=semver" alt="Latest GitHub release" /></a>
   <a href="https://github.com/SiluPanda/harnesscheck/actions/workflows/ci.yml"><img src="https://github.com/SiluPanda/harnesscheck/actions/workflows/ci.yml/badge.svg" alt="CI status" /></a>
   <a href="https://github.com/SiluPanda/harnesscheck"><img src="https://img.shields.io/badge/github-SiluPanda%2Fharnesscheck-181717?logo=github&logoColor=white" alt="GitHub repository" /></a>
   <a href="https://github.com/SiluPanda/harnesscheck/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-0b1020" alt="MIT license" /></a>
@@ -26,10 +26,12 @@ Fresh source links and rationale live in [`docs/research.md`](./docs/research.md
 
 ## 60-second quick start
 
-Install-free npm usage:
+Install the versioned release artifact directly from GitHub:
 
 ```bash
 mkdir harnesscheck-demo && cd harnesscheck-demo
+npm init -y
+npm install --save-dev https://github.com/SiluPanda/harnesscheck/releases/download/v0.1.0/harnesscheck-0.1.0.tgz
 npx harnesscheck init
 npx harnesscheck doctor
 npx harnesscheck run --run-id first-run
