@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" role="img" aria-labelledby="title desc">
+  <title id="title">HarnessCheck wordmark</title>
+  <desc id="desc">HarnessCheck wordmark with the product mark and the tagline deterministic isolated regression tests for AI coding agents.</desc>
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#61dafb" />
+      <stop offset="100%" stop-color="#7c5cff" />
+    </linearGradient>
+  </defs>
+  <rect width="960" height="280" rx="32" fill="#08101f" />
+  <g transform="translate(32 32)">
+    <rect x="0" y="0" width="216" height="216" rx="36" fill="#0f1730" stroke="#243257" stroke-width="2" />
+    <g opacity="0.5" stroke="#23304f" stroke-width="2">
+      <path d="M54 16v184" />
+      <path d="M108 16v184" />
+      <path d="M162 16v184" />
+      <path d="M16 54h184" />
+      <path d="M16 108h184" />
+      <path d="M16 162h184" />
+    </g>
+    <path d="M44 120l30 30 76-86" fill="none" stroke="url(#accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="18" />
+    <circle cx="160" cy="138" r="12" fill="#61dafb" />
+  </g>
+  <g transform="translate(286 82)">
+    <text x="0" y="72" fill="#f8fbff" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="74" font-weight="800" letter-spacing="-1.5">HarnessCheck</text>
+    <text x="0" y="126" fill="#9ab0d6" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="26" font-weight="500">Deterministic isolated regression tests for AI coding agents</text>
+    <g transform="translate(0 158)">
+      <rect width="168" height="28" rx="14" fill="#13203b" />
+      <text x="20" y="19" fill="#d3ddf4" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700">FIXTURE-FIRST</text>
+      <rect x="182" width="170" height="28" rx="14" fill="#13203b" />
+      <text x="202" y="19" fill="#d3ddf4" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700">AGENT-AGNOSTIC</text>
+      <rect x="366" width="156" height="28" rx="14" fill="#13203b" />
+      <text x="386" y="19" fill="#d3ddf4" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700">EVIDENCE-RICH</text>
+    </g>
+  </g>
+</svg>

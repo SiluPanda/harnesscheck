@@ -1,0 +1,43 @@
+version: 1
+name: todo-api-agent-contract
+
+defaults:
+  trials: 2
+  timeoutMs: 30000
+  assertionTimeoutMs: 10000
+  concurrency: 2
+  keep: failures
+  redact: true
+
+agents:
+  fixture-agent:
+    adapter: custom
+    description: Deterministic local agent used by the quick-start demo
+    command: node
+    args:
+      - "{configDir}/fake-agent.mjs"
+      - "{prompt}"
+
+cases:
+  - id: add-health-endpoint
+    description: Adds a health response without disturbing the todo route
+    fixture: ./fixture
+    prompt: >-
+      Add a health endpoint module. It must export a health() function that
+      returns an object with status set to ok. Keep the existing todo behavior.
+    assertions:
+      - type: file_exists
+        path: src/health.js
+      - type: file_contains
+        path: src/health.js
+        value: 'status: "ok"'
+      - type: changed_files
+        include: ["src/health.js"]
+        exclude: ["package.json", "test/**"]
+        max: 1
+      - type: command_exit
+        command: npm
+        args: ["test"]
+        exitCode: 0
+      - type: stdout_contains
+        value: "Implemented health endpoint"

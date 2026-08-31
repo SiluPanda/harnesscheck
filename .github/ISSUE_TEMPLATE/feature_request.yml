@@ -1,0 +1,60 @@
+name: Feature request
+description: Propose a new capability or meaningful improvement.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please focus on the user problem first. If the request changes the schema, adapters, or security posture, call that out explicitly.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What user problem or workflow gap does this solve?
+      placeholder: We need to compare adapter behavior across...
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the shape of the feature, API, or UX.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What other approaches did you consider?
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - configuration schema
+        - adapter
+        - assertions
+        - reporting
+        - CI/integration
+        - security
+        - documentation
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Validation and impact
+      description: How should reviewers confirm this works, and what could it affect?
+      placeholder: This should be validated by...
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submit checklist
+      options:
+        - label: I explained the underlying user need, not just an implementation preference.
+          required: true
+        - label: I called out any schema, adapter, or security implications.
+          required: true

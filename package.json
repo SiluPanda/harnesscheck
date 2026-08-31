@@ -1,0 +1,109 @@
+{
+  "name": "harnesscheck",
+  "version": "0.1.0",
+  "description": "Deterministic regression tests for AI coding-agent behavior.",
+  "type": "module",
+  "bin": {
+    "harnesscheck": "dist/cli.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "harnesscheck.schema.json",
+    "README.md",
+    "LICENSE",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "assets",
+    "docs",
+    "examples"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf dist coverage .harnesscheck",
+    "dev": "tsx src/cli.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings 0",
+    "audit": "npm audit --audit-level=low",
+    "schema:write": "npm run build --silent && node scripts/sync-schema.mjs --write",
+    "schema:check": "node scripts/sync-schema.mjs --check",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "check:package": "publint && attw --pack .",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run test:coverage && npm run build && npm run schema:check && npm run check:package && npm run audit",
+    "prepublishOnly": "npm run check"
+  },
+  "keywords": [
+    "ai-agents",
+    "coding-agents",
+    "evals",
+    "harness-engineering",
+    "codex",
+    "claude-code",
+    "gemini-cli",
+    "opencode",
+    "testing",
+    "cli"
+  ],
+  "author": "Silu Panda",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiluPanda/harnesscheck.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SiluPanda/harnesscheck/issues"
+  },
+  "homepage": "https://github.com/SiluPanda/harnesscheck#readme",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "overrides": {
+    "esbuild": "^0.28.2"
+  },
+  "dependencies": {
+    "commander": "^14.0.0",
+    "minimatch": "^10.0.3",
+    "picocolors": "^1.1.1",
+    "yaml": "^2.8.1",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@types/node": "^22.18.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "eslint": "^9.34.0",
+    "prettier": "^3.6.2",
+    "publint": "^0.3.12",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0",
+    "vitest": "^3.2.4"
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "test"
+  }
+}

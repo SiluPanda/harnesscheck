@@ -1,0 +1,7 @@
+dist
+coverage
+node_modules
+.harnesscheck
+package-lock.json
+harnesscheck.schema.json
+examples/**/fixture

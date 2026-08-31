@@ -1,0 +1,91 @@
+name: Bug report
+description: Report a reproducible HarnessCheck defect.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please include a minimal reproduction and redact any secrets before submitting.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What broke, and why is it a bug?
+      placeholder: A concise description of the defect.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Exact steps, prompt, fixture notes, and commands to reproduce.
+      placeholder: |
+        1. Prepare fixture...
+        2. Run HarnessCheck...
+        3. Observe...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened, including exit codes or artifacts if helpful?
+    validations:
+      required: true
+  - type: dropdown
+    id: adapter
+    attributes:
+      label: Adapter
+      description: Which adapter or runtime was involved?
+      options:
+        - codex
+        - claude
+        - gemini
+        - opencode
+        - custom
+        - multiple
+    validations:
+      required: true
+  - type: input
+    id: harness_version
+    attributes:
+      label: HarnessCheck version or commit
+      description: Tag, package version, or commit hash if known.
+      placeholder: 0.1.0 or commit SHA
+  - type: input
+    id: runtime_versions
+    attributes:
+      label: Runtime versions
+      description: Node.js version plus agent CLI version(s).
+      placeholder: Node 20.12.x, codex x.y.z
+  - type: textarea
+    id: config
+    attributes:
+      label: Relevant config
+      description: Paste the smallest redacted config snippet that still shows the issue.
+      render: yaml
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Artifact notes
+      description: Summarize any useful `.harnesscheck/` artifacts or changed-file evidence.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submit checklist
+      options:
+        - label: I searched for existing issues.
+          required: true
+        - label: I removed secrets and private data from this report.
+          required: true
+        - label: I included enough detail for someone else to reproduce the issue.
+          required: true
